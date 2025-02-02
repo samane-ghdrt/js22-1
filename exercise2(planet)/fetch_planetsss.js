@@ -8,3 +8,12 @@
 //      c) Lastly, to ensure that the value of the index does not surpass the length of the planets array, implement a mechanism to control the maximum allowed value for the index
 
 ////////Answer///////////
+const URL="https://handlers.education.launchcode.org/static/planets.json";
+async function name(params) {
+    const DATA= await fetch(URL);
+    const data1=Date.parse();
+    for (const element of data1) {
+        const name=data1.name;
+        const distance=data1.distance;
+    }
+}
