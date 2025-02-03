@@ -9,11 +9,47 @@
 
 ////////Answer///////////
 const URL="https://handlers.education.launchcode.org/static/planets.json";
-async function name(params) {
+const buttonEl=document.querySelector("button");
+const index=0;
+let plan = [];
+async function planets() {
+   try {
     const DATA= await fetch(URL);
-    const data1=Date.parse();
-    for (const element of data1) {
-        const name=data1.name;
-        const distance=data1.distance;
-    }
+    const data1=await DATA.json();
+    plan=data1;
+    planet(plan[index]);
+  
+   } catch (error) {
+    console.log(error); 
+   }
+    
+}
+buttonEl.addEventListener("click",()=>{
+ 
+   console.log( planet(plan[index+1]));
+   
+
+    })
+planets();
+const divEl=document.querySelector('#destination');
+function planet(element) {
+    const nameEL=document.createElement("h4");
+    const diameterEl=document.createElement("p"); 
+    const starEl=document.createElement("p"); 
+    const distanceEL=document.createElement("p");
+    const imageEL=document.createElement("img");
+    const moonsEl=document.createElement("p");
+
+    nameEL.textContent=element.name;
+    diameterEl.textContent=element.diameter;
+    starEl.textContent=element.star;
+    distanceEL.textContent=element.distance;
+    imageEL.setAttribute("src",element.image)
+    moonsEl.textContent=element.moons;
+
+divEl.append(nameEL,diameterEl,starEl,distanceEL,imageEL,moonsEl);
+imageEL.style.width="100px";
+divEl.style.border="1px solid"
+divEl.style.width="300px"
+    
 }
