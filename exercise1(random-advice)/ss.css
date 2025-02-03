@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(95, 95, 82);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.triangle{
+    /* width: 250px; */
+    /* background-color: rgb(84, 90, 82); */
+}

@@ -25,10 +25,8 @@ async function planets() {
     
 }
 buttonEl.addEventListener("click",()=>{
- 
+//   let index=index+1;
    console.log( planet(plan[index+1]));
-   
-
     })
 planets();
 const divEl=document.querySelector('#destination');
