@@ -10,7 +10,7 @@
 ////////Answer///////////
 const URL="https://handlers.education.launchcode.org/static/planets.json";
 const buttonEl=document.querySelector("button");
-const index=0;
+let index=0;
 let plan = [];
 async function planets() {
    try {
@@ -25,12 +25,20 @@ async function planets() {
     
 }
 buttonEl.addEventListener("click",()=>{
-//   let index=index+1;
-   console.log( planet(plan[index+1]));
+    index++; // اول زیاد کنید
+    if (index >= plan.length) {
+        index = 0;  // اگه به انتها رسید، به 0 برگردونید
+    }
+    planet(plan[index]);
     })
 planets();
 const divEl=document.querySelector('#destination');
 function planet(element) {
+    if (!element) { 
+        console.error("Planet data is missing!");
+        return;
+    }
+     divEl.innerHTML = "";
     const nameEL=document.createElement("h4");
     const diameterEl=document.createElement("p"); 
     const starEl=document.createElement("p"); 
