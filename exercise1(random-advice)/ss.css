@@ -1,12 +1,35 @@
 body{
-    background-color: rgb(95, 95, 82);
+    background-color: rgb(200, 200, 176);
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
+
 }
 .triangle{
-    /* width: 250px; */
-    /* background-color: rgb(84, 90, 82); */
+    width: 650px; 
+    height: 600px;
+    background-color: rgb(84, 90, 82);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.id{
+    font-size: 20px;
+    color: rgb(87, 132, 89);
+    display: flex;
+    justify-content: center;
+ 
+}
+.para{
+    font-size: 60px;
+    color: aliceblue;
+    /* font-weight: bold; */
+}
+button{
+    width: 50px;
+
 }

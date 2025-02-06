@@ -9,5 +9,16 @@ const url="https://api.adviceslip.com/advice";
 const triangleEl=document.querySelector('.triangle');
 const bodyEl=document.querySelector('body');
 triangleEl.style.border="1px solid";
-// bodyEl.style.background="rgb(32, 32, 3)";
-// triangleEl.style.background=rgb(63, 63, 56);
+const idEl=document.querySelector(".id");
+const paraEl=document.querySelector(".para");
+
+async function build() {
+    const da=await fetch(url);
+    const data=await da.json();
+    idEl.textContent=`ADVICE # ${data.slip.id}`;
+    paraEl.textContent=data.slip.advice;
+    
+}
+build();
+const buttonEL=document.querySelector('button');
+buttonEL.addEventListener('click', build)
